@@ -2,9 +2,17 @@
 import { FormData } from "../functions";
 import { useState } from "react";
 
-export default function TextBox({ children, data, id, style}: 
-    { children: string, data?: FormData, id?: string | number, style?: string}) 
-{
+export default function TextBox({ 
+    children, 
+    data, 
+    id, 
+    style
+}: { 
+    children: string, 
+    data?: FormData, 
+    id?: string | number, 
+    style?: string
+}) {
     const [ value, setValue ] = useState(''); 
 
     if ( data && id ) {

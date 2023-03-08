@@ -3,9 +3,19 @@ import Button from "./button";
 import TextBox from "./textbox";
 import { ButtonAction, FormData  } from "../functions";
 
-export default function Form({ children, data, buttonText, action, style }: 
-    {children: any, data: FormData, buttonText: string, action?: ButtonAction, style?: string}) 
-{
+export default function Form({ 
+    children, 
+    data, 
+    buttonText, 
+    action, 
+    className 
+}: {
+    children: any, 
+    data: FormData, 
+    buttonText: string, 
+    action?: ButtonAction, 
+    className?: string
+}) {
     children = Array.isArray(children) ? children: [children];
 
     const execute = (e: any) => {
@@ -20,7 +30,7 @@ export default function Form({ children, data, buttonText, action, style }:
     }
 
     return (
-        <div className={"h-auto flex justify-center items-center p-1 " + style}>
+        <div className={"h-auto flex justify-center items-center p-1 " + className}>
             <div className="text-center">
                 {children.map((child: any, index: number) => {
                     if (child.type.name === TextBox.name) {
