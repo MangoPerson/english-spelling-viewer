@@ -7,9 +7,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <div className='bg-zinc-900 fixed top-0 bottom-0 right-0 left-0 p-8'>
-                {children}
-            </div>
+                <body>
+                    <div className='bg-zinc-900 fixed top-0 bottom-0 right-0 left-0 p-8'>
+                        {children}
+                    </div>
+            </body>
         </html>
     )
 }
