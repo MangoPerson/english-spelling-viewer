@@ -30,7 +30,7 @@ export default function LineChart({data1,
 }: {
     data1: number[], 
     data2: number[], 
-    title?: string
+    title: string
 }) {
     const options = {
         plugins: {
@@ -41,29 +41,38 @@ export default function LineChart({data1,
                 display: true,
                 text: title
             }
+        },
+        scales: {
+            y: {
+                ticks: {
+                    display: false
+                }
+            }
         }
     };
     
     const gdata = {
-        labels: data1.map((_, index) => index),
+        labels: data1.map((_, index) => index + 1700),
         datasets: [
             {
                 data: data1,
                 borderColor: 'rgb(100, 100, 200)',
                 backgroundColor: 'rgb(75, 75, 150)',
                 spanGaps: true,
-                label: 'US',
-                pointRadius: 0
+                label: 'American Spelling',
+                pointRadius: 0,
+                borderWidth: 1.5
             },
             {
                 data: data2,
                 borderColor: 'rgb(200, 100, 100)',
                 backgroundColor: 'rgb(150, 75, 75)',
                 spanGaps: true,
-                label: 'UK',
-                pointRadius: 0
+                label: 'British Spelling',
+                pointRadius: 0,
+                borderWidth: 1.5
             }
         ]
     }
-    return <Line className='w-96' data={gdata} options={options}/>
+    return <Line data={gdata} options={options} width={275}/>
 }
