@@ -30,7 +30,7 @@ export default function Form({
     }
 
     return (
-        <div className={"h-auto flex justify-center items-center p-1 " + className}>
+        <div className={"h-auto flex justify-center items-center p-1 text-white " + className}>
             <div className="text-center">
                 {children.map((child: any, index: number) => {
                     if (child.type.name === TextBox.name) {

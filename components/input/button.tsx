@@ -4,15 +4,15 @@ import { ButtonAction } from "../functions"
 export default function Button({ 
     children, 
     onClick, 
-    style 
+    className 
 }: {
     children: any, 
     onClick?: ButtonAction, 
-    style?: string
+    className?: string
 }) {
     return (
         <button 
-            className={"btn " + style}
+            className={"bg-sky-600 hover:bg-sky-800 transition-all p-2 rounded-md w-full mx-1 my-3 text-neutral-200 text-center " + className}
             onClick={onClick}
         >
             {children}
