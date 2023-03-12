@@ -7,7 +7,6 @@ import USSpellingData from '@/data/us_spellings.json'
 import UKSpellingData from '@/data/uk_spellings.json'
 import Button from "@/components/input/button";
 import { useState } from "react";
-import { randomInt } from "crypto";
 
 /*
 export const metadata = {
@@ -92,7 +91,7 @@ export default function Home() {
                     />
                 </div>
             </div>
-            
+
             <div className="border-2 border-gray-600 absolute left-8 right-8 bottom-0 p-2">
                 <h1 className="align-middle text-center text-xl text-gray-500 font-normal p-1 m-0">
                     Data Gathered from the Google NGram API

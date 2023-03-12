@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Scatter } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 
 import {
     Chart as ChartJS,
@@ -11,9 +11,7 @@ import {
     Title,
     Tooltip,
     Legend,
-    TooltipItem,
 } from 'chart.js'
-import { Chart } from 'react-chartjs-2'
 
 ChartJS.register(
     CategoryScale,

@@ -1,12 +1,6 @@
 import PocketBase from 'pocketbase';
 import { Dispatch, SetStateAction } from 'react';
 
-// Global pocketbase instance; autocancellation disabled
-
-export const pb = new PocketBase('http://127.0.0.1:8090/');
-
-pb.autoCancellation(false);
-
 // Utility types
 
 export type Setter<T> = (arg: T) => void;
