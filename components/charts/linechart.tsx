@@ -44,7 +44,9 @@ export default function LineChart({data1,
         scales: {
             y: {
                 ticks: {
-                    display: false
+                    callback: (value: any) => {
+                        return value.toExponential(1);
+                    }
                 }
             }
         }

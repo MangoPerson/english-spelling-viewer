@@ -50,12 +50,32 @@ export default function Graph({
             title: {
                 display: true,
                 text: title,
+                font: {
+                    size: 28
+                },
+                color: 'rgb(220, 220, 220)'
             },
             tooltip: {
                 callbacks: {
                     label: (ctx: any) => {
                         const label = labels[ctx.dataIndex];
                         return `${label}: ${ctx.parsed.x.toExponential(3)}, ${ctx.parsed.y.toExponential(3)}`;
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    callback: (value: any) => {
+                        return value.toExponential(1);
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    callback: (value: any) => {
+                        return value.toExponential(1);
                     }
                 }
             }

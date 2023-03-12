@@ -1,4 +1,3 @@
-'use client';
 import Button from "./button";
 import TextBox from "./textbox";
 import { ButtonAction, FormData  } from "../functions";
@@ -8,13 +7,15 @@ export default function Form({
     data, 
     buttonText, 
     action, 
-    className 
+    className,
+    buttonStyle
 }: {
     children: any, 
     data: FormData, 
     buttonText: string, 
     action?: ButtonAction, 
-    className?: string
+    className?: string,
+    buttonStyle?: string
 }) {
     children = Array.isArray(children) ? children: [children];
 
@@ -30,14 +31,14 @@ export default function Form({
     }
 
     return (
-        <div className={"h-auto flex justify-center items-center p-1 text-white " + className}>
-            <div className="text-center">
+        <div className={"h-auto justify-center items-center p-1 text-white text-center " + className}>
                 {children.map((child: any, index: number) => {
                     if (child.type.name === TextBox.name) {
                         const id = child.props.id ? child.props.id : index;
+                        const style = child.props.className ? child.props.className : '';
                         
                         return (
-                            <TextBox key={index} id={id} data={data}>
+                            <TextBox key={index} id={id} data={data} className={style}>
                                 {child.props.children} 
                             </TextBox>
                         );
@@ -49,8 +50,7 @@ export default function Form({
                         )
                     }
                 })}
-                <Button onClick={execute}>{buttonText}</Button>
-            </div>
+                <Button onClick={execute} className={buttonStyle}>{buttonText}</Button>
         </div>
     )
 }

@@ -11,12 +11,6 @@ export interface TextBox {
     setValue: Dispatch<SetStateAction<string>>;
 }
 
-export interface FrontEndReview {
-    id: string;
-    level: number;
-    term: string;
-}
-
 // Utility classes
 
 export class FormData {  

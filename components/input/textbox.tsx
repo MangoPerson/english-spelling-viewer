@@ -4,14 +4,14 @@ import { useState } from "react";
 
 export default function TextBox({ 
     children, 
-    data, 
+    data,
     id, 
-    style
+    className
 }: { 
     children: string, 
     data?: FormData, 
     id?: string | number, 
-    style?: string
+    className?: string
 }) {
     const [ value, setValue ] = useState(''); 
 
@@ -27,7 +27,7 @@ export default function TextBox({
     return (
         <input
             className={"bg-transparent border-2 border-neutral-500 rounded-md outline-none m-1 p-2 focus:border-neutral-100\
-                hover:border-neutral-400 transition-all w-full " + style}
+                hover:border-neutral-400 transition-all " + className}
             type='text'
             placeholder={children}
             value={value}
