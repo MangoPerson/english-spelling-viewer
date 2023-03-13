@@ -66,21 +66,46 @@ export default function Graph({
         },
         scales: {
             x: {
+                suggestedMax: 2e-4,
                 ticks: {
                     callback: (value: any) => {
                         return value.toExponential(1);
+                    }
+                },
+                grid: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Frequency of American Spelling',
+                    color: 'rgb(200, 200, 200)',
+                    font: {
+                        size: 16
                     }
                 }
             },
             y: {
+                suggestedMax: 1.2e-4,
                 ticks: {
                     callback: (value: any) => {
                         return value.toExponential(1);
                     }
+                },
+                grid: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Frequency of British Spelling',
+                    color: 'rgb(200, 200, 200)',
+                    font: {
+                        size: 16
+                    }
                 }
             }
-        }
+        },
+        maintainAspectRatio: true
     };
 
-    return <Scatter data={gdata} options={options}/>
+    return <Scatter data={gdata} options={options} width={100} height={60}/>
 }

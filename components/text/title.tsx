@@ -12,7 +12,7 @@ export default function Title({
             <Head>
                 {children}
             </Head>
-            <div className={"align-middle text-neutral-300 font-bold text-8xl text-center p-4 " + className}>
+            <div className={"align-middle text-neutral-300 font-bold p-4 text-center text-2xl md:text-6xl lg:text-7xl " + className}>
                 <h1>{children}</h1>
             </div>
         </>

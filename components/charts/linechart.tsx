@@ -38,18 +38,38 @@ export default function LineChart({data1,
             },
             title: {
                 display: true,
-                text: title
+                text: title,
+                font: {
+                    size: 16
+                },
+                color: 'rgb(150, 150, 150)'
+            },
+            tooltip: {
+                callbacks: {
+                    label: (ctx: any) => {
+                        return `${ctx.parsed.y.toExponential(3)}`;
+                    }
+                }
             }
         },
         scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
             y: {
                 ticks: {
                     callback: (value: any) => {
                         return value.toExponential(1);
                     }
+                },
+                grid: {
+                    display: false
                 }
             }
-        }
+        },
+        maintainAspectRatio: true
     };
     
     const gdata = {
@@ -60,7 +80,7 @@ export default function LineChart({data1,
                 borderColor: 'rgb(100, 100, 200)',
                 backgroundColor: 'rgb(75, 75, 150)',
                 spanGaps: true,
-                label: 'American Spelling',
+                label: 'American',
                 pointRadius: 0,
                 borderWidth: 1.5
             },
@@ -69,11 +89,11 @@ export default function LineChart({data1,
                 borderColor: 'rgb(200, 100, 100)',
                 backgroundColor: 'rgb(150, 75, 75)',
                 spanGaps: true,
-                label: 'British Spelling',
+                label: 'British',
                 pointRadius: 0,
                 borderWidth: 1.5
             }
         ]
     }
-    return <Line data={gdata} options={options} width={275}/>
+    return <Line data={gdata} options={options} width={100} height={60}/>
 }
