@@ -235,8 +235,8 @@ export default function Home() {
                     'drafts',
                     'almanacks',
                     'anglicize'
-                ].map(e => (
-                    <div className="w-full p-2">
+                ].map((e, index) => (
+                    <div className="w-full p-2" key={index}>
                         {lineGraphOf(e)}
                     </div>
                 ))}
